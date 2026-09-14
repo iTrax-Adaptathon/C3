@@ -183,7 +183,28 @@ When a flight delay occurs:
 
 ## Quickstart: Run from Scratch
 
-Follow these 4 steps to run the entire platform locally:
+### ⚡ One-Command Automated Setup (Recommended)
+
+Run the automated developer setup script to install dependencies, compile all workspace packages, provision the Playwright browser, and run the invariant test suite:
+
+- **Any OS (npm/pnpm shortcut)**:
+  ```bash
+  pnpm setup
+  ```
+- **Windows (PowerShell)**:
+  ```powershell
+  .\setup.ps1
+  ```
+- **Linux / macOS**:
+  ```bash
+  chmod +x setup.sh && ./setup.sh
+  ```
+
+---
+
+### 🛠️ Manual Step-by-Step Setup
+
+If you prefer running the setup steps manually:
 
 ### 1. Install Dependencies
 From the repository root:
