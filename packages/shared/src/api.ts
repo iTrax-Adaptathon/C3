@@ -35,6 +35,8 @@ export const SimulationResultSchema = z.object({
   proposedBaggageRoutes: z.array(BaggageRouteSchema),
   hasUnresolvableConflicts: z.boolean(),
   unresolvableReason: z.string().nullable().optional(),
+  propagationDepth: z.number().int().optional(),
+  resolutionLatencyMs: z.number().optional(),
   createdAt: z.coerce.date()
 });
 export type SimulationResult = z.infer<typeof SimulationResultSchema>;

@@ -34,6 +34,7 @@ export class OperationsEngine {
     request: { flightId: string; delayMinutes: number; reason?: string },
     options: SimulationOptions = {}
   ): SimulationResult {
+    const startTime = Date.now();
     const rootFlight = state.flights.find((f) => f.id === request.flightId);
     if (!rootFlight) {
       throw new Error(`Flight not found: ${request.flightId}`);
@@ -293,6 +294,7 @@ export class OperationsEngine {
     }
 
     const changeSetToken = `cs_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`;
+    const resolutionLatencyMs = Date.now() - startTime;
 
     return {
       changeSetToken,
@@ -304,6 +306,8 @@ export class OperationsEngine {
       proposedBaggageRoutes: tentativeBaggage,
       hasUnresolvableConflicts: hasUnresolvable,
       unresolvableReason,
+      propagationDepth: impactEvents.length,
+      resolutionLatencyMs,
       createdAt: new Date()
     };
   }
