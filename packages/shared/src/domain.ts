@@ -4,6 +4,7 @@ export const AircraftTypeSchema = z.enum([
   "A320",
   "A321",
   "A350",
+  "A380",
   "B737",
   "B777",
   "B787",
