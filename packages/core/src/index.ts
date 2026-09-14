@@ -1,3 +1,6 @@
-import { SHARED_VERSION } from "@c3/shared";
-
-export const CORE_VERSION = `0.1.0 (shared: ${SHARED_VERSION})`;
+export * from "./types.js";
+export * from "./intervals.js";
+export * from "./conflicts.js";
+export * from "./graph.js";
+export * from "./allocator.js";
+export * from "./engine.js";
