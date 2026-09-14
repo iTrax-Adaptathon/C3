@@ -1,0 +1,26 @@
+{
+  "name": "@c3/core",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo linting @c3/core",
+    "test": "echo testing @c3/core"
+  },
+  "dependencies": {
+    "@c3/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@c3/config": "workspace:*",
+    "typescript": "^5.8.2"
+  }
+}
