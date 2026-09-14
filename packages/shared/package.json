@@ -19,5 +19,8 @@
   "devDependencies": {
     "@c3/config": "workspace:*",
     "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "zod": "3.24.2"
   }
 }
