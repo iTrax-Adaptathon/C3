@@ -46,7 +46,7 @@ test.describe("Ops Console: End-to-End Operational Lifecycle", () => {
 
     // 6. Verify live board update:
     // fl_101 remains at Gate A1 with "DELAYED" badge
-    await expect(gateA1Column.getByText("DELAYED")).toBeVisible();
+    await expect(gateA1Column.getByText("DELAYED").first()).toBeVisible();
 
     // fl_202 has been bumped out of Gate A1 and into Gate A4
     await expect(gateA1Column.getByTestId("flight-card-fl_202")).not.toBeVisible();
