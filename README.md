@@ -28,7 +28,6 @@ The platform guarantees a **mathematical and physical invariant: zero double-boo
 8. [API & WebSocket Specification](#api--websocket-specification)
 9. [Fleet & Airport Domain Model](#fleet--airport-domain-model)
 10. [Docker Deployment](#docker-deployment)
-11. [Git Append-Only Workflow](#git-append-only-workflow)
 
 ---
 
@@ -177,7 +176,7 @@ When a flight delay occurs:
 
 - **Node.js**: `v24.x` or higher (tested on Node `v24.14.0`)
 - **pnpm**: `v11.x` or higher (e.g. `v11.7.0`)
-- **Git**: Append-only commit compliance (do not rebase or squash commits)
+- **Git**: Installed on your system
 - **Modern Web Browser**: Chrome, Edge, Safari, or Firefox
 
 ---
@@ -407,41 +406,6 @@ This starts:
 To stop the containers:
 ```bash
 docker compose -f infra/docker-compose.yml down
-```
-
----
-
-## Git Append-Only Workflow
-
-This project adheres to an append-only Git workflow. Every feature, schema, test, and documentation update is committed as an atomic, imperative commit without history alteration.
-
-```
-cf7abf8 feat(seed): expand fleet to 16 flights across 11 gates and 10 crews
-6dd0bea feat(api): add root redirect to ops console and informational /live handler
-ce6521e test(e2e): refine delay status badge locator in ops-console spec
-df51a8e Add comprehensive repository documentation and architecture guide
-119bfdf Add Next.js environment type declarations
-206b6a2 Add concurrency race suite verifying zero double-booking under load
-51a6fd9 Add propagation depth and latency instrumentation metrics to engine simulation
-abe137f Add Playwright end-to-end test for delay simulation and live board update
-992e461 Build operations console UI with Gantt board, delay simulation drawer, and audit feed
-eafb923 Implement web client API layer and useLiveBoard WebSocket hook
-478da85 Scaffold @c3/web Next.js 15+ App Router application with Tailwind CSS
-c9f0c30 Add end-to-end integration tests for delay simulation, commit, and WebSocket events
-bbd6f9a Implement NestJS controllers, WebSocket gateway, and REST endpoints
-10189f7 Implement engine bridge, persistence adapter, and Redlock concurrency manager
-efe55e4 Scaffold @c3/api NestJS application and Dockerfile
-abcf753 Implement OperationsEngine BFS propagation, dry-run simulation, and Vitest suite
-c685e96 Implement airport operations dependency graph and resource allocation heuristics
-cfc7ecd Add interval mathematics, conflict detection, and double-booking invariants in @c3/core
-ebe60dc Implement @c3/db package with Drizzle schemas and exclusion constraint integration test
-434c38d Add PostgreSQL 17 init migration with btree_gist and exclusion constraint
-2555180 Define domain models, API contracts, and event schemas in @c3/shared
-3f4bfa3 Scaffold @c3/shared and @c3/core workspace packages
-47ae99d Add @c3/config package for shared TypeScript configuration
-7327a13 Add GitHub Actions CI pipeline skeleton
-78cb040 Add Docker Compose setup for PostgreSQL 17 and Redis 7
-d7f9382 Initialize pnpm Turborepo monorepo workspace
 ```
 
 ---
