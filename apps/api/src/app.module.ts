@@ -6,6 +6,7 @@ import { GatewayModule } from "./modules/gateway/gateway.module.js";
 import { FlightsModule } from "./modules/flights/flights.module.js";
 import { AssignmentsModule } from "./modules/assignments/assignments.module.js";
 import { BoardModule } from "./modules/board/board.module.js";
+import { AppController } from "./app.controller.js";
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { BoardModule } from "./modules/board/board.module.js";
     FlightsModule,
     AssignmentsModule,
     BoardModule
-  ]
+  ],
+  controllers: [AppController]
 })
 export class AppModule {}
